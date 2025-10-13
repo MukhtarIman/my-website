@@ -1,0 +1,467 @@
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        /* 01. Variables */
+        :root {
+            --color-primary: #ff014f;
+            --color-secondary: #f4f5f6;
+            --color-tertiary: #0d1013;
+            --color-subtitle: #f9004d;
+            --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
+            --background-color-2: #212428; /* Main body background */
+            --shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e; /* Convex shadow */
+            --shadow-2: inset 21px 21px 19px #181a1d, inset -21px -21px 19px #202225; /* Concave shadow */
+            --inner-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
+            --gradient-red-hover: linear-gradient(145deg, #ff014f, #d11414);
+            --color-heading: #ffffff;
+            --color-body: #878e99;
+            --color-white: #ffffff;
+            --p-regular: 400;
+            --s-bold: 700;
+            --transition: 0.4s;
+            --font-primary: "Poppins", sans-serif;
+            --font-secondary: "Montserrat", sans-serif;
+            --font-size-b1: 18px;
+            --line-height-b1: 1.5;
+            --h2: 60px;
+        }
+
+        /* 04. Reset & Body */
+        body {
+            background-color: var(--background-color-2);
+            font-family: var(--font-primary);
+            color: var(--color-body);
+            font-weight: var(--p-regular);
+            overflow-x: hidden;
+            cursor: pointer;
+        }
+        #typing-text::after {
+          content: '|';
+          animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+          50% {
+            opacity: 0;
+          }
+        }
+
+        
+        /* 02. Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            color: var(--color-heading);
+            font-weight: var(--s-bold);
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: var(--h2);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .welcome {
+          font-size: 14px;
+          font-family: var(--font-secondary);
+          color: var(--color-lightn);
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-weight: 500;
+          display: block;
+          margin-bottom: 10px;
+          margin-left: 3.5rem;
+
+        }
+
+        /* --------------------------- NAVBAR STYLES --------------------------- */
+        .navbar {
+            background-color: var(--background-color-2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .nav-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-family: var(--font-secondary);
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        .nav-me {
+          color: var(--color-primary);
+        }
+        .nav-desc {
+          font-size: 4rem;
+          margin-left: 4.0rem;
+        }
+        .nav-link {
+            color: var(--color-body);
+            text-decoration: none;
+            transition: color var(--transition);
+            font-weight: 500;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-primary);
+        }
+        .download-cv {
+            /* Using button style variables for download link */
+            background: var(--background-color-1);
+            box-shadow: var(--shadow-1);
+            color: var(--color-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+        .download-cv:hover {
+            color: var(--color-white);
+            background: var(--gradient-red-hover);
+        }
+        .hamburger {
+            display: none; /* Hidden on desktop */
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--color-white);
+            transition: var(--transition);
+        }
+
+        /* --------------------------- BUTTON STYLES (from .rn-btn) --------------------------- */
+        .btn {
+            background: var(--background-color-1);
+            box-shadow: var(--shadow-1);
+            transition: all var(--transition);
+            font-weight: var(--s-bold);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            padding: 15px 30px;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-primary {
+            color: var(--color-primary);
+        }
+        .btn-secondary {
+            color: var(--color-body);
+        }
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--gradient-red-hover);
+            transition: width var(--transition);
+            z-index: -1;
+        }
+        .btn-primary:hover, .btn-secondary:hover {
+            color: var(--color-white);
+            transform: translateY(-3px);
+        }
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        /* --------------------------- HERO SECTION STYLES --------------------------- */
+        .hero-section {
+            padding: 6rem 0;
+        }
+        .hero-container {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            align-items: center;
+            gap: 4rem;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .hero-subtitle {
+            font-size: 2rem;
+            color: var(--color-body);
+            margin-bottom: 2rem;
+        }
+        .highlight {
+            color: var(--color-primary);
+        }
+        .hero-description {
+            font-size: var(--font-size-b1);
+            line-height: var(--line-height-b1);
+            margin-bottom: 2.5rem;
+            margin-left: 3.5rem;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-left: 3.7rem;
+        }
+        .image-placeholder {
+            background: var(--background-color-1);
+            box-shadow: var(--shadow-1);
+            border-radius: 10px;
+            height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .placeholder-text {
+            color: var(--color-body);
+            font-size: 1.2rem;
+        }
+
+        /* --------------------------- GENERAL SECTION STYLES --------------------------- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-primary);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4rem;
+            display: block;
+        }
+        .features-section, .resume-section, .contact-section {
+            padding: 5rem 0;
+        }
+
+        /* --------------------------- FEATURES STYLES --------------------------- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: var(--background-color-1);
+            box-shadow: var(--shadow-1); /* Convex shadow for floating look */
+            border-radius: 10px;
+            padding: 5.5rem;
+            transition: all var(--transition);
+        }
+        .feature-card:hover {
+            box-shadow: var(--shadow-2); /* Concave shadow on hover for pressed look */
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .feature-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+            color: var(--color-body);
+        }
+        
+        /* --------------------------- RESUME STYLES --------------------------- */
+        .resume-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        .resume-heading {
+            font-size: 2rem;
+            color: var(--color-white);
+            margin-bottom: 2rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-primary);
+            display: inline-block;
+        }
+        .resume-item {
+            background: var(--background-color-1);
+            box-shadow: var(--shadow-1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--color-primary);
+        }
+        .resume-item h4 {
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+        }
+        .resume-item .company, .resume-item .period {
+            font-size: 0.9rem;
+            color: var(--color-body);
+            margin-bottom: 0.5rem;
+        }
+        .resume-item p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .skill-tag {
+            background: var(--background-color-1);
+            box-shadow: var(--shadow-1);
+            color: var(--color-body);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all var(--transition);
+        }
+        .skill-tag:hover {
+            box-shadow: var(--shadow-2);
+            color: var(--color-primary);
+        }
+
+        /* --------------------------- CONTACT STYLES --------------------------- */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+        .contact-info {
+            background: var(--background-color-1);
+            box-shadow: var(--shadow-1);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            background: var(--background-color-2);
+            box-shadow: var(--shadow-1);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.1rem;
+        }
+        .contact-item p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+        .contact-form {
+            background: var(--background-color-1);
+            box-shadow: var(--shadow-1);
+            border-radius: 10px;
+            padding: 3rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--background-color-2);
+            border: 1px solid #303337;
+            border-radius: 6px;
+            color: var(--color-white);
+            box-shadow: var(--inner-shadow); /* Inner shadow for input fields */
+            outline: none;
+            transition: border-color var(--transition);
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--color-primary);
+        }
+
+        /* --------------------------- FOOTER STYLES --------------------------- */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .footer p {
+            font-size: 0.9rem;
+            color: var(--color-body);
+            margin-bottom: 0;
+        }
+
+        /* --------------------------- MEDIA QUERIES --------------------------- */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .image-placeholder {
+                max-width: 400px;
+                margin: 2rem auto 0;
+            }
+            .resume-content, .contact-content {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                gap: 1.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mukhtar Ahmed - Software Engineer</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">MA</a>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#" class="nav-link download-cv">Download CV</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <p class="welcome">WELCOME TO MY WORLD</p>
+        <h1 class="nav-desc">
+          Hi, I'm <div class="nav-me">Mukhtar Ahmed</div> a <span id="typing-text"></span>
+        </h1>
+        <script>
+          const roles = ["Software Engineer", "Frontend Developer", "Backend Developer"];
+          const typingText = document.getElementById("typing-text");
+          let roleIndex = 0;
+          let charIndex = 0;
+          let deleting = false;
+
+          function typeEffect() {
+            const currentRole = roles[roleIndex];
+
+            if (!deleting && charIndex < currentRole.length) {
+              typingText.textContent += currentRole.charAt(charIndex);
+              charIndex++;
+              setTimeout(typeEffect, 30); // faster typing speed
+            }
+            else if (deleting && charIndex > 0) {
+              typingText.textContent = currentRole.substring(0, charIndex - 1);
+              charIndex--;
+              setTimeout(typeEffect, 35); // faster deleting speed
+            }
+            else if (!deleting && charIndex === currentRole.length) {
+              deleting = true;
+              setTimeout(typeEffect, 700); // pause before deleting
+            }
+            else if (deleting && charIndex === 0) {
+              deleting = false;
+              roleIndex = (roleIndex + 1) % roles.length;
+              setTimeout(typeEffect, 300); // pause before typing next
+            }
+          }
+
+          typeEffect();
+        </script>
+
+
+        <p class="hero-description">I’m an experienced Back-End Developer with 1.5+ years of hands-on experience
+          building and designing responsive websites and web applications from scratch. I’m skilled in Java, JavaScript,
+          HTML/CSS, SQL, and AWS, with strong knowledge of Git for version control. I’m also comfortable working with
+          backend servers and transforming Figma designs into clean, user-friendly interfaces.</p>
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-placeholder">
+          <img src="\profile.jpg" alt="Mukhtar Ahmed"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-text\'>Your Photo Here</div>'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features-section">
+    <div class="container">
+      <h2 class="section-title">What I Do</h2>
+      <p class="section-subtitle">My expertise and skills</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">💻</div>
+          <h3>Web Development</h3>
+          <p>Building responsive and performant web applications using modern technologies and best practices.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Development</h3>
+          <p>Creating seamless mobile experiences with native and cross-platform development frameworks.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>Backend Development</h3>
+          <p>Developing robust server-side solutions with scalable architecture and efficient databases.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3>Cloud Solutions</h3>
+          <p>Deploying and managing applications on cloud platforms with optimal performance and security.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="resume-section">
+    <div class="container">
+      <h2 class="section-title">Resume</h2>
+      <p class="section-subtitle">My professional journey</p>
+
+      <div class="resume-content">
+        <div class="resume-column">
+          <h3 class="resume-heading">Experience</h3>
+          <div class="resume-item">
+            <h4>Software Developer</h4>
+            <p class="company">NIIT Ibadan (Fortesoft Systems)</p>
+            <p class="period">2024 - 2025</p>
+            <p>As a Software Development Trainee at NIIT, I learned and practiced Java and SQL, gaining hands-on
+              experience in developing enterprise-grade applications. I worked on building and testing database-driven
+              systems, explored object-oriented programming concepts, and implemented best practices for clean and
+              efficient code. My training at NIIT strengthened my understanding of backend logic, data management, and
+              full-stack development fundamentals within a collaborative, project-based learning environment.</p>
+          </div>
+          <div class="resume-item">
+            <h4>Frontend Developer</h4>
+            <p class="company">Digital Solutions Ltd.</p>
+            <p class="period">2025 - present</p>
+            <p>As a Frontend Development Trainee at Digital Solutions Ltd., I learned and practiced building responsive,
+              high-performance web interfaces using HTML, CSS, JavaScript, and React. I gained hands-on experience
+              transforming UI designs into interactive components, connecting applications to APIs, and implementing
+              dynamic user experiences. Through this training, I developed a strong foundation in modern frontend
+              development, code organization, and web performance optimization within a practical, project-based
+              environment.</p>
+          </div>
+        </div>
+
+        <div class="resume-column">
+          <h3 class="resume-heading">Education Quality</h3>
+          <div class="resume-item">
+            <h4>Bachelor of Science in Computer Science</h4>
+            <p class="company">Lead City University, Ibadan</p>
+            <p class="period">2022 - 2025</p>
+          </div>
+          <div class="resume-column">
+            <div class="resume-item">
+              <h4>Senior School Certificate Examination (SSCE)</h4>
+              <p class="company">Al Balagh Model College, Okeho</p>
+              <p class="period">2018 - 2021</p>
+            </div>
+            <div class="resume-column">
+              <div class="resume-item">
+                <h4>Junior School Certificate Examination (JSCE)</h4>
+                <p class="company">Al Balagh Model College, Okeho</p>
+                <p class="period">2015 - 2018</p>
+              </div>
+              <h3 class="resume-heading">Skills</h3>
+              <div class="skills-list">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">AWS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Let's work together</p>
+
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>mukhtarolajide1@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <h4>Phone</h4>
+              <p>+234 70 4502 1832</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Location</h4>
+              <p>Ibadan, Nigeria</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💼</div>
+            <div>
+              <h4>LinkedIn</h4>
+              <p>linkedin.com/in/mukhtar-ahmed</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Subject" required />
+          </div>
+          <div class="form-group">
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Mukhtar Ahmed. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
