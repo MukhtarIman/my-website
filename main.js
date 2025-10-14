@@ -190,9 +190,9 @@ document.querySelector('.download-cv').addEventListener('click', (e) => {
   const cvContent = `
 MUKHTAR AHMED
 Software Engineer
-Email: mukhtar.ahmed@example.com
-Phone: +1 (555) 123-4567
-Location: City, Country
+Email: mukhtarolajide1@gmail.com.com
+Phone: +234 70 4502 1832
+Location: Ibadan, Nigeria
 LinkedIn: linkedin.com/in/mukhtar-ahmed
 
 PROFESSIONAL SUMMARY
@@ -201,27 +201,22 @@ Specialized in full-stack development with expertise in modern web technologies.
 
 EXPERIENCE
 
-Senior Software Engineer - Tech Company Inc. (2022 - Present)
+Senior Developer- NIIT Fortesoft (2024 - 2025)
 - Led development of enterprise applications
-- Mentored junior developers
 - Implemented best practices across the team
 
-Software Engineer - Digital Solutions Ltd. (2020 - 2022)
+Frontend Developer - Digital Solutions Ltd. (2025 - present)
 - Developed full-stack web applications
 - Collaborated with cross-functional teams
 - Improved system performance
 
-Junior Developer - StartUp Innovations (2018 - 2020)
-- Built responsive web interfaces
-- Maintained codebases
-- Participated in agile development processes
 
 EDUCATION
-Bachelor of Science in Computer Science - University Name (2014 - 2018)
+Bachelor of Science in Computer Science - Lead City University, Ibadan (2022 - 2025)
 Focused on software engineering, algorithms, and data structures. Graduated with honors.
 
 SKILLS
-JavaScript, TypeScript, React, Node.js, Python, HTML/CSS, SQL, Git, AWS, Docker
+JavaScript, Java, HTML/CSS, SQL, Git, AWS
   `;
 
   const blob = new Blob([cvContent], { type: 'text/plain' });
@@ -236,3 +231,4 @@ JavaScript, TypeScript, React, Node.js, Python, HTML/CSS, SQL, Git, AWS, Docker
 });
 
 renderPortfolio();
+
